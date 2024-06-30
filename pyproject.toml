@@ -61,7 +61,9 @@ dependencies = [
 "uvicorn==0.23.2",
 "wandb==0.15.12",
 "websockets==11.0.3",
-"whisper-at==0.5"
+"whisper-at==0.5",
+{ path = "hf-dev/transformers-main", develop = true },
+{ path = "peft-main", develop = true }
 ]
 
 [tool.setuptools]
