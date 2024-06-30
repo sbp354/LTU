@@ -4,8 +4,8 @@ requires = ["setuptools", "setuptools-scm"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "SALMONN"
-description = "SALMONN: Speech Audio Language Music Open Neural Network"
+name = "LTU"
+description = "LTU: Listen, Think, and Understand"
 requires-python = "==3.10"
 readme = "README.md"
 dynamic = ["version"]
