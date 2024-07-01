@@ -65,7 +65,7 @@ dependencies = [
 ]
 
 [tool.setuptools]
-packages = ["LTU"]
+packages = ["ltu"]
 
 [tool.ruff]
 target-version = "py310"
