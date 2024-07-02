@@ -61,8 +61,12 @@ dependencies = [
 "uvicorn==0.23.2",
 "wandb==0.15.12",
 "websockets==11.0.3",
-"whisper-at==0.5"
+"whisper-at==0.5",
+"-e hf-dev/transformers-main"
 ]
+
+[tool.scripts]
+install_custom_packages = "pip install -e hf-dev/transformers-main && pip install -e peft-main"
 
 [tool.setuptools]
 packages = ["ltu"]
