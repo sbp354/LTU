@@ -21,7 +21,7 @@ class Prompter(object):
         #     file_name = osp.join("../templates", f"{template_name}.json")
         # if not osp.exists(file_name):
         #     raise ValueError(f"Can't read {file_name}")
-        self.template = files(ltu).joinpath(f"{template_name}.json").open('rb')
+        self.template = files(ltu).joinpath(f"templates/{template_name}.json").open('rb')
         if self._verbose:
             print(
                 f"Using prompt template {template_name}: {self.template['description']}"
