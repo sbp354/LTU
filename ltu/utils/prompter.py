@@ -22,10 +22,17 @@ class Prompter(object):
         # if not osp.exists(file_name):
         #     raise ValueError(f"Can't read {file_name}")
         self.template = files(ltu).joinpath(f"templates/{template_name}.json").open('r', encoding='utf-8')
-        if self._verbose:
-            print(
-                f"Using prompt template {template_name}: {self.template['description']}"
-            )
+        print(self.template)
+        self.template = {
+                        "description": "A shorter template to experiment with.",
+                        "prompt_input": "### Instruction:\n{instruction}\n\n### Input:\n{input}\n\n### Response:\n",
+                        "prompt_no_input": "### Instruction:\n{instruction}\n\n### Response:\n",
+                        "response_split": "### Response:"
+                    }
+        # if self._verbose:
+        #     print(
+        #         f"Using prompt template {template_name}: {self.template['description']}"
+        #     )
 
     def generate_prompt(
         self,
