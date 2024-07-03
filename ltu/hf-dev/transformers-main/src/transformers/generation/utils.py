@@ -2470,6 +2470,8 @@ class GenerationMixin:
         # # todo: manually change size of att mask, might not support batch
         if audio_input != None:
             ori_att_mask = model_kwargs['attention_mask']
+            print("ori_att_mask", ori_att_mask.shape)
+            print("audio_input", audio_input.shape)
             # TODO: need to change if use a different length
             audio_att_mask = torch.ones((ori_att_mask.shape[0], int(audio_input.shape[1]/32)), dtype=torch.bool, device=ori_att_mask.device)
             model_kwargs['attention_mask'] = torch.concat([ori_att_mask, audio_att_mask], dim=1)
