@@ -5,6 +5,7 @@ A dedicated helper to manage templates and prompt building.
 import json
 import os.path as osp
 from typing import Union
+import importlib.resources as pkg_resources
 
 
 class Prompter(object):
@@ -20,7 +21,7 @@ class Prompter(object):
             file_name = osp.join("../templates", f"{template_name}.json")
         if not osp.exists(file_name):
             raise ValueError(f"Can't read {file_name}")
-        with open(file_name) as fp:
+        with pkg_resources.open_text(ltu.templates, f"{template_name}.json") as fp:
             self.template = json.load(fp)
         if self._verbose:
             print(
