@@ -65,7 +65,7 @@ dependencies = [
 ]
 
 [tool.scripts]
-install_custom_packages = "pip install -e hf-dev/transformers-main && pip install -e peft-main"
+install_custom_packages = "pip install -e ltu/hf-dev/transformers-main && pip install -e ltu/peft-main"
 
 [tool.setuptools]
 packages = ["ltu"]
