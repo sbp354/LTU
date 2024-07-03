@@ -5,7 +5,7 @@ A dedicated helper to manage templates and prompt building.
 import json
 import os.path as osp
 from typing import Union
-import importlib.resources as pkg_resources
+from importlib.resources import files
 import ltu
 
 class Prompter(object):
@@ -21,8 +21,7 @@ class Prompter(object):
         #     file_name = osp.join("../templates", f"{template_name}.json")
         # if not osp.exists(file_name):
         #     raise ValueError(f"Can't read {file_name}")
-        with pkg_resources.open_text(ltu.templates, f"{template_name}.json") as fp:
-            self.template = json.load(fp)
+        self.template = files(ltu).joinpath(f"{template_name}.json").open('rb')
         if self._verbose:
             print(
                 f"Using prompt template {template_name}: {self.template['description']}"
