@@ -50,5 +50,5 @@ uvicorn==0.23.2
 wandb==0.15.12
 websockets==11.0.3
 whisper-at==0.5
--e hf-dev/transformers-main
--e peft-main
+# -e hf-dev/transformers-main
+# -e peft-main
